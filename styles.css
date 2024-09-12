@@ -1,0 +1,107 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: peachpuff; /* Light sky blue pinkish color */
+    font-family: 'Poppins', sans-serif; /* Updated font */
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 5px solid #333; /* Outline for the game board */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 3rem; /* Updated font size */
+    color: #333; /* Updated color */
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px); /* Updated cell size */
+    grid-template-rows: repeat(3, 120px); /* Updated cell size */
+    gap: 10px; /* Updated gap */
+}
+
+.cell {
+    width: 120px; /* Updated size */
+    height: 120px; /* Updated size */
+    background-color: #fff;
+    border: 3px solid #333; /* Updated border */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem; /* Updated font size */
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s; /* Transition effect */
+}
+
+.cell:hover {
+    background-color: #f9f9f9; /* Hover effect */
+    transform: scale(1.05); /* Scale effect */
+}
+
+.cell.x::before {
+    content: "X";
+    font-size: 4rem; /* Updated font size */
+    color: red;
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+}
+
+.cell.o::before {
+    content: "O";
+    font-size: 4rem; /* Updated font size */
+    color: blue;
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+}
+
+#restartButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.5rem; /* Updated font size */
+    cursor: pointer;
+    background-color: #333; /* Button color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow */
+    transition: background-color 0.3s, transform 0.3s; /* Transition effect */
+}
+
+#restartButton:hover {
+    background-color: #555; /* Hover effect */
+    transform: scale(1.05); /* Scale effect */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
